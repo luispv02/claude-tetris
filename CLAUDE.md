@@ -14,7 +14,7 @@ Open `index.html` directly, or serve statically: `python3 -m http.server 8000` a
 
 Three files: `index.html` (DOM, canvases), `style.css`, and `game.js` (all logic, loaded as a plain script with `'use strict'`; module-level `let` state, no classes).
 
-- **Board**: `ROWS × COLS` matrix; `0` = empty, `1–7` = piece type, which indexes both `COLORS` and `PIECES` (index 0 is `null` in both).
+- **Board**: `ROWS × COLS` matrix; `0` = empty, `1–8` = piece type (8 = nut, a 3×3 ring with an empty centre), which indexes both `COLORS` and `PIECES` (index 0 is `null` in both).
 - **Pieces**: square matrices (the cell value is the type index). Rotation is `rotateCW` (transpose + reverse); `tryRotate` applies simple kicks `[0,-1,1,-2,2]` horizontally only (not SRS).
 - **Loop**: `loop(ts)` via `requestAnimationFrame` accumulates `dropAccum`, drops one row at `dropInterval`, and calls `draw()` each frame. Pause/game over use `cancelAnimationFrame(animId)`; resuming and `init()` restart the loop manually.
 - **Lock flow**: `lockPiece()` → `merge()` → `clearLines()` → `spawn()`. `spawn()` calls `endGame()` if the new piece collides immediately. Scoring, level (every 10 lines) and `dropInterval = max(100, 1000 - (level-1)*90)` are updated in `clearLines()`.
