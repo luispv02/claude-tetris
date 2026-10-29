@@ -60,7 +60,7 @@ jobs:
                - Opcional: good first issue, help wanted, duplicate, invalid, wontfix
                - Prioridad (exactamente una): priority:high, priority:medium, priority:low
                - Área (una o más): area:gameplay, area:ui, area:rendering, area:input, area:ci
-            4. Redacta en español un diagnóstico en Markdown con estas secciones:
+            4. Redacta en español un diagnóstico con estas secciones. El diagnóstico se publicará como comentario en GitHub, así que DEBE estar en formato Markdown que GitHub entienda (GitHub Flavored Markdown): encabezados `##`, listas con `-` o `1.`, código en línea con `backticks`, bloques de código con ``` y lenguaje (```js), casillas `- [ ]` para los criterios de aceptación, y sin HTML ni formatos que GitHub no renderice:
                ## Resumen
                ## Tipo y prioridad (justificación)
                ## Archivos y funciones involucrados (ej. `clearLines()`, `tryRotate`, `draw()` en `game.js`)
